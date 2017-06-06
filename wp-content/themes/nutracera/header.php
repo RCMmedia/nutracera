@@ -72,7 +72,7 @@
 		<?php	} elseif ( is_page_template( 'page_templates/template-page-aboutus.php' )  ) { ?>
 			<img src="<?php bloginfo('template_url') ?>/images/placeholder-1920x590.png" alt="placeholder-1920x590" width="1920" height="590">
 			
-		<?php	} elseif ( is_page_template( 'page_templates/template-page-what-is-amicen.php' )  ) { ?>
+		<?php	} elseif ( is_page_template( 'page_templates/template-page-what-is-amicen.php'  ) || is_page_template( 'page_templates/template-page-how-it-works.php' )|| is_page_template( 'page_templates/template-page-how-to-take.php' )) { ?>
 		<div class="bg-wrap" style="background: url(<?php bloginfo('template_url') ?>/images/about-us-inner-banner.jpg)">
 			<div class="inner-banner-wrap" >
 				<div class="left">

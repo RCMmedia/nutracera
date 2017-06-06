@@ -36,15 +36,12 @@ get_header(); ?>
 			</div><!-- inner-wrap -->
 		</div><!-- about-amicen -->
 		
-		<div class="up-next">
-			<div class="inner-wrap">
-				<div class="left">
-					<img src="<?php bloginfo('template_url') ?>/images/up-next.jpg" alt="up-next" width="434" height="434" />
-				</div><!-- left -->
-				<div class="right">
-					
-				</div><!-- right -->
-			</div>
-		</div><!-- up-next -->
+		
+		<?php $temp_url = get_template_directory() ?>
+		<?php include(''.$temp_url.'/inc/modules/up-next.php') ?>
+		
+		<?php include(''.$temp_url.'/inc/modules/featured-product.php') ?>
+		
+		
 
 <?php get_footer(); ?>

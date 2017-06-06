@@ -114,8 +114,48 @@ This product is not intended to diagnose, treat, cure or prevent any disease.
 </div><!-- .kids-wrap -->
 
 <div class="blog-feed-wrap">
-<!-- 	placeholder for blog -->
-</div>
+
+	<div class="inner-wrap">
+		<h3>LATEST NEWS</h3>
+		<div class="blog-feed">
+			<div class="left">
+				<div class="post">
+
+					<?php $myfirst_query = new WP_Query( array('order' => 'ASC','posts_per_page' => 3, 'offset' => '2'  ) ); while($myfirst_query->have_posts()) : $myfirst_query->the_post(); ?>
+
+					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
+						
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('athlete-image'); ?>
+						<h3 class="entry-title"><?php the_title(); ?></h3>
+						<h3 class="subheader"><?php the_field('athlete_name_subheader'); ?></h3></a>
+					</div>
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); // reset the query ?>
+
+
+				</div>
+			</div><!-- left -->
+			<div class="right">
+				<div class="post">
+
+					<?php $myfirst_query = new WP_Query( array('order' => 'ASC','posts_per_page' => 2 ) ); while($myfirst_query->have_posts()) : $myfirst_query->the_post(); ?>
+
+					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
+						
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('athlete-image'); ?>
+						<h3 class="entry-title"><?php the_title(); ?></h3>
+						<h3 class="subheader"><?php the_field('athlete_name_subheader'); ?></h3></a>
+					</div>
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); // reset the query ?>
+
+
+				</div>
+			</div><!-- right -->
+		</div><!-- blog-feed -->
+	</div><!-- inner-wrap -->
+
+</div><!-- blog-feed-wrap -->
 <div class="question-footer">
 	<div class="left">
 		<div class="inner">
@@ -129,6 +169,8 @@ This product is not intended to diagnose, treat, cure or prevent any disease.
 		<img src="<?php bloginfo('template_url') ?>/images/qustion-right-bg.png" alt="qustion-right-bg" width="1109" height="588" />
 	</div><!-- right -->
 </div><!-- .question-footer -->
+
+
 
 
 
