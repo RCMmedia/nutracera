@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-		<div id="container">
-			<div id="content" role="main">
+		<div class="general-container">
+			<div class="inner-wrap">
 
 			<?php
 			/*
@@ -20,9 +20,20 @@ get_header(); ?>
 			 */
 			get_template_part( 'loop', 'single' );
 			?>
+			<?php// get_sidebar('widgetized-area'); ?>
+			<div class="widget-area">
+			<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('widgetized-area')) : else : ?>
 
+	<div class="pre-widget">
+		<p><strong>Widgetized Area</strong></p>
+		<p>This panel is active and ready for you to add some widgets via the WP Admin</p>
+	</div>
+
+	<?php endif; ?>
+			</div>
 			</div><!-- #content -->
+			
 		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

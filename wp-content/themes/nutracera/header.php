@@ -50,7 +50,7 @@
 			</div><!-- .main-nav -->
 			<div class="cart-wrap">
 				<a class="cart-items" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><span class="cart-count-wrap"><?php echo sprintf ( _n( '<span class="cart-item-count">%d</span>', '<span class="cart-item-count">%d</span>', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?><img src="<?php bloginfo('template_url') ?>/images/icon-shopping-cart.png"/></span> <?php echo WC()->cart->get_cart_total(); ?></a>
-				<a class="view-cart-header" href="">VIEW CART</a>
+				<a class="view-cart-header" href="<?php bloginfo('url') ?>/cart">VIEW CART</a>
 			</div><!-- .cart-wrap -->
 		</div><!-- .main-header -->
 	</div><!-- .top-header-wrap -->

@@ -54,6 +54,7 @@
 				 <?php woocommerce_template_loop_add_to_cart( $post, $_product );?>
 				 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
 			<?php endwhile;?>
+			<?php wp_reset_query(); // reset the query ?>
 			
 			<div class="disclaimer">
 				* These statements have not been evaluated by the Food and Drug Administration.
@@ -116,43 +117,65 @@ This product is not intended to diagnose, treat, cure or prevent any disease.
 <div class="blog-feed-wrap">
 
 	<div class="inner-wrap">
-		<h3>LATEST NEWS</h3>
+		<h3 class="section-title">LATEST NEWS</h3>
 		<div class="blog-feed">
 			<div class="left">
-				<div class="post">
 
-					<?php $myfirst_query = new WP_Query( array('order' => 'ASC','posts_per_page' => 3, 'offset' => '2'  ) ); while($myfirst_query->have_posts()) : $myfirst_query->the_post(); ?>
-
-					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
+					<?php $blog_set1_query = new WP_Query( array('order' => 'ASC','posts_per_page' => 3, 'offset' => '2'  ) ); while($blog_set1_query->have_posts()) : $blog_set1_query->the_post(); 
 						
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('athlete-image'); ?>
-						<h3 class="entry-title"><?php the_title(); ?></h3>
-						<h3 class="subheader"><?php the_field('athlete_name_subheader'); ?></h3></a>
-					</div>
+						$image = get_field('single_post_featured_image');
+					?>
+						
+					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
+						<div class="post-date">
+							<div class="post-day"><?php the_time('d') ?></div>
+							<div class="post-month"><?php the_time('M') ?></div>
+						</div>
+						<a class="link-controller" href="<?php the_permalink(); ?>" style="background:url(<?php echo $image['url']; ?>) no-repeat center center / cover">
+							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+						</a>
+						<div class="copy-wrap">
+							<h3 class="entry-title"><?php the_title(); ?></h3>
+							<?php the_excerpt(''); ?>
+						</div><!-- copy-wrap -->
+						
+					</div><!-- post -->
 					<?php endwhile; ?>
 					<?php wp_reset_postdata(); // reset the query ?>
 
 
-				</div>
 			</div><!-- left -->
 			<div class="right">
-				<div class="post">
 
-					<?php $myfirst_query = new WP_Query( array('order' => 'ASC','posts_per_page' => 2 ) ); while($myfirst_query->have_posts()) : $myfirst_query->the_post(); ?>
+					<?php $blog_set2_query = new WP_Query( array('order' => 'ASC','posts_per_page' => 2 ) ); while($blog_set2_query->have_posts()) : $blog_set2_query->the_post(); 
+						
+						$image = get_field('single_post_featured_image');
+					?>
 
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
+						<div class="post-date">
+							<div class="post-day"><?php the_time('d') ?></div>
+							<div class="post-month"><?php the_time('M') ?></div>
+						</div>
+						<a class="link-controller"  href="<?php the_permalink(); ?>" style="background:url(<?php echo $image['url']; ?>) no-repeat center center / cover">
+							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+						</a>
+						<div class="copy-wrap">
+							<h3 class="entry-title"><?php the_title(); ?></h3>
+							<?php the_excerpt(''); ?>
+						</div><!-- copy-wrap -->
 						
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('athlete-image'); ?>
-						<h3 class="entry-title"><?php the_title(); ?></h3>
-						<h3 class="subheader"><?php the_field('athlete_name_subheader'); ?></h3></a>
-					</div>
+					</div><!-- post -->
 					<?php endwhile; ?>
 					<?php wp_reset_postdata(); // reset the query ?>
+					
 
-
-				</div>
 			</div><!-- right -->
+			
 		</div><!-- blog-feed -->
+		<div class="view_blog_wrap">
+				<a href="<?php bloginfo('url') ?>/"><span>VIEW ALL NEWS</span><span>></span></a>
+			</div>
 	</div><!-- inner-wrap -->
 
 </div><!-- blog-feed-wrap -->
@@ -169,6 +192,39 @@ This product is not intended to diagnose, treat, cure or prevent any disease.
 		<img src="<?php bloginfo('template_url') ?>/images/qustion-right-bg.png" alt="qustion-right-bg" width="1109" height="588" />
 	</div><!-- right -->
 </div><!-- .question-footer -->
+
+
+<script>
+		
+	var copy_wrap_p = jQuery('.blog-feed .left .post:first-child p');
+	copy_wrap_p.html(copy_wrap_p.text().substring(0,215) + '... <a class="read-more" href="">READ MORE</a>');
+	
+	var copy_wrap_p2 = jQuery('.blog-feed .left .post:nth-child(2) p');
+	copy_wrap_p2.html(copy_wrap_p2.text().substring(0,50) + '... <a class="read-more" href="">READ MORE</a>');
+	
+	var copy_wrap_p3 = jQuery('.blog-feed .left .post:nth-child(3) p');
+	copy_wrap_p3.html(copy_wrap_p3.text().substring(0,50) + '... <a class="read-more" href="">READ MORE</a>');
+	
+	var copy_wrap_p4 = jQuery('.blog-feed .right .post:first-child p');
+	copy_wrap_p4.html(copy_wrap_p4.text().substring(0,156) + '... <a class="read-more" href="">READ MORE</a>');
+	
+	var copy_wrap_p5 = jQuery('.blog-feed .right .post:last-child p');
+	copy_wrap_p5.html(copy_wrap_p5.text().substring(0,105) + '... <a class="read-more" href="">READ MORE</a>');
+	
+	jQuery('.type-post').each(function(){
+		var copy_wrap_p_ = jQuery(this).find('.link-controller').attr('href');
+		jQuery(this).find('.read-more').attr('href', copy_wrap_p_);
+	});
+	
+
+</script>
+
+
+
+
+
+
+
 
 
 

@@ -21,4 +21,30 @@ function quantity_inputs_for_woocommerce_loop_add_to_cart_link( $html, $product 
 }
 
 
-?>
+function new_excerpt_more($more) {
+    return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more', 21 );
+
+function the_excerpt_more_link( $excerpt ){
+    $post = get_post();
+    $excerpt .= '';
+    return $excerpt;
+}
+add_filter( 'the_excerpt', 'the_excerpt_more_link', 21 );
+
+
+// widget area
+if (function_exists('register_sidebar')) {
+
+	register_sidebar(array(
+		'name' => 'Widgetized Area',
+		'id'   => 'widgetized-area',
+		'description'   => 'This is a widgetized area.',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
+	));
+
+}
