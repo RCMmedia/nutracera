@@ -11,7 +11,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
 <title><?php wp_title( '|', TRUE,'right' ); bloginfo( 'name' ); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -45,7 +46,8 @@
 			<div class="main-nav-wrap">
 				<?php wp_nav_menu( array('menu' => 'Main Navigation') ); ?>
 				<div class="search-box">
-					<img src="<?php bloginfo('template_url') ?>/images/search-mock.jpg" alt="search-mock" width="228" height="25">
+<!-- 					<img src="<?php bloginfo('template_url') ?>/images/search-mock.jpg" alt="search-mock" width="228" height="25"> -->
+					<?php get_search_form(); ?>
 				</div>
 			</div><!-- .main-nav -->
 			<div class="cart-wrap">

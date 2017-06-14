@@ -5,13 +5,8 @@
 
 get_header(); ?>
 
-			<div class="breadcrumb-wrap">
-				<ul>
-					<li><a href="">WHAT IS AMICEN?</a></li>
-					<li class="active"><a href="">How it works?</a></li>
-					<li><a href="">How to Take?</a></li>
-				</ul>
-			</div><!-- breadcrumb-wrap -->
+			<?php $temp_url = get_template_directory() ?>
+			<?php include(''.$temp_url.'/inc/modules/amicen-nav.php') ?>
 		
 			<div class="how-to-take-wrap">
 				<div class="inner-wrap">
@@ -45,9 +40,10 @@ get_header(); ?>
 
 			</div><!-- how-to-take-wrap -->
 		
-		<?php $temp_url = get_template_directory() ?>
 		
 		<?php include(''.$temp_url.'/inc/modules/featured-product.php') ?>
-		
+		<script>
+			jQuery('body.page-template-template-page-how-to-take li:last-child').addClass('active');
+		</script>
 
 <?php get_footer(); ?>

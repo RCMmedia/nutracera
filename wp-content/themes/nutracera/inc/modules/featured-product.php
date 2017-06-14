@@ -1,6 +1,6 @@
 <div class="featured-product-module">
 	<div class="inner-wrap flex-wrap">
-		<div class="left">
+		<div class="left" style="background: url(<?php bloginfo('template_url') ?>/images/product-helper1.jpg)">
 			
 			<img src="<?php bloginfo('template_url') ?>/images/product-helper1.jpg" alt="product-helper1" width="742" height="698" />
 			
