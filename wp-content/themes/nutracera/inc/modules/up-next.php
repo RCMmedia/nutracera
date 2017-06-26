@@ -1,13 +1,14 @@
-<div class="up-next">
+<div id="up-next" class="up-next">
 	<div class="inner-wrap">
-		<div class="left">
-			<img src="<?php bloginfo('template_url') ?>/images/up-next.jpg" alt="up-next" width="434" height="434" />
+		<div class="left wow fadeInLeft">
+			<?php $up_next_image = get_field('up_next_image')?>
+			<img src="<?php echo $up_next_image['url']; ?>" alt="<?php echo $up_next_image['alt']; ?>" width="434" height="434" />
 		</div><!-- left -->
-		<div class="right">
+		<div class="right wow fadeIn" data-wow-delay=".3s">
 			<h3>UP NEXT</h3>
-			<h4>How Does<br>Amicen Work?</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-			<a class="button-blue">LEARN MORE ></a>
+			<h4><?php the_field('up_next_title'); ?></h4>
+			<?php the_field('up_next_content'); ?>
+			<a class="button-blue" href="<?php the_field('up_next_button_link'); ?>"><?php the_field('up_next_button_text'); ?></a>
 		</div><!-- right -->
 	</div>
 </div><!-- up-next -->

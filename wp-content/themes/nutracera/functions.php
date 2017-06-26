@@ -48,3 +48,14 @@ if (function_exists('register_sidebar')) {
 	));
 
 }
+
+
+add_filter('body_class', 'pwm_woocommerce_cart_status');
+function pwm_woocommerce_cart_status( $classes ){
+global $woocommerce;
+
+if( $woocommerce->cart->cart_contents_count > 0 ):
+$classes[] = 'woocommerce-items-in-cart';
+endif;
+return $classes;
+}

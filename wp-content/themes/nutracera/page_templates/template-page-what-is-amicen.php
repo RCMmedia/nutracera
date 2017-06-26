@@ -5,37 +5,37 @@
 
 get_header(); ?>
 
-		<?php $temp_url = get_template_directory() ?>
-		<?php include(''.$temp_url.'/inc/modules/amicen-nav.php') ?>
+		<?php $directory_url = get_template_directory() ?>
+		<?php include(''.$directory_url.'/inc/modules/amicen-nav.php') ?>
 		<div class="about-amicen">
 			<div class="inner-wrap">
-				<div class="left">
-					<h3>ABOUT AMICEN</h3>
-					<p>Amicen is a unique formulation designed to correct metabolic imbalances associated with methylation and neurotransmitter deficiencies.  This therapeutic-grade formula consists of cognitive enhancing amino acids and advanced vitamin support that are not only familiar to the body, but are safe and effective without the adverse side-effects commonly associated with conventional ADHD treatment.</p>
-
-					<p>Research has suggested that children with ADHD are prone to issues with methylation, vitamin/mineral deficiencies, oxidative stress and the inability to excrete toxins.  Amicen is a first of its kind formulation that addresses all of these needs – with virtually NO SIDE EFFECTS!</p>
-
+				<div class="left wow fadeInLeft">
+					<h3><?php the_field('block_one_title'); ?></h3>
+					<?php the_field('block_one_content'); ?>
 				</div><!-- left -->
-				<div class="right">
-					<img src="<?php bloginfo('template_url') ?>/images/sample-product.png" alt="sample-product" width="355" height="416" />
+				<div class="right wow fadeInRight">
+					<?php $right_image = get_field('block_two_image'); ?>
+					<img src="<?php echo $right_image['url'] ?>" alt="<?php echo $right_image['alt'] ?>" width="355" height="416" />
 					<div class="copy">
-						Advanced, neurotransmitter enhancing nutrients that help support chemical imbalances associated with ADHD symptoms.
+						<?php the_field('block_two_textarea'); ?>
 					</div><!-- .copy -->
-					<a class="button-green">BUY NOW</a>
+					<a href="#up-next" class="button-green"><?php the_field('block_two_button_text'); ?></a>
 				</div><!-- right -->
-				<div class="image-wrap">
+				<div class="image-wrap wow fadeInUp">
 					<img src="<?php bloginfo('template_url') ?>/images/kids-group-image.jpg" alt="kids-group-image" width="619" height="412" />
 				</div><!-- image-wrap -->
 			</div><!-- inner-wrap -->
 		</div><!-- about-amicen -->
 		
 		
-		<?php include(''.$temp_url.'/inc/modules/up-next.php') ?>
+		<?php include(''.$directory_url.'/inc/modules/up-next.php') ?>
 		
-		<?php include(''.$temp_url.'/inc/modules/featured-product.php') ?>
+		<?php include(''.$directory_url.'/inc/modules/featured-product.php') ?>
 		
 		<script>
 			jQuery('body.page-template-template-page-what-is-amicen li:first-child').addClass('active');
 		</script>
+		
+
 
 <?php get_footer(); ?>

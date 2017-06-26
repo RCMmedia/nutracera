@@ -18,6 +18,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url') ?>/inc/css/combined.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url') ?>/inc/css/combined.css" />
+
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--
@@ -27,12 +29,14 @@
 <?php wp_head(); ?>
 
 <script src="<?php bloginfo('template_url') ?>/inc/js/combined.js"></script>
+<script src="<?php bloginfo('template_url') ?>/inc/js/featherlight.js"></script>
+<script src="<?php bloginfo('template_url') ?>/inc/js/wow.min.js"></script>
 <script src="https://use.typekit.net/qan1ikz.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script>new WOW().init();</script>
 </head>
 
 <body <?php body_class(); ?>>
-
 	<div class="top-header-wrap">
 		<div class="specials-wrap">
 			<div class="inner-wrap">
@@ -44,9 +48,15 @@
 				<a href="<?php bloginfo('url') ?>"><img src="<?php bloginfo('template_url') ?>/images/logo.jpg" alt="logo" width="226" height="108"></a>
 			</div><!-- .logo -->
 			<div class="main-nav-wrap">
-				<?php wp_nav_menu( array('menu' => 'Main Navigation') ); ?>
+					
+					<?php wp_nav_menu( array('menu' => 'Main Navigation') ); ?>
+					<div class="mobile-menu-toggle-wrap" style="display: none">
+						
+						<a class="mainmenu-overlay-toggle" href=""><span>MENU</span><img src="<?php bloginfo('template_url') ?>/images/mobile-menu-icon.jpg" alt="mobile-menu-icon" width="37" height="17"></a>
+					</div><!-- mobile-menu-toggle-wrap -->
+				
+				
 				<div class="search-box">
-<!-- 					<img src="<?php bloginfo('template_url') ?>/images/search-mock.jpg" alt="search-mock" width="228" height="25"> -->
 					<?php get_search_form(); ?>
 				</div>
 			</div><!-- .main-nav -->
@@ -60,35 +70,57 @@
 		<?php if ( is_front_page() ) { ?>
 			
 			<div class="slider-wrap">
-				<div class="slider-item" style="background:url(<?php bloginfo('template_url') ?>/images/banner.jpg) no-repeat;">
-					<div class="slide-inner-wrap">
-						<h2>LOREM IPSUM DOLOR</h2>
-						<h1>LOREM IPSUM DO</h1>
-						<a class="button-green" href="#">BUY NOW</a>
-					</div><!-- .slide-inner-wrap -->
-				</div><!-- .slider-item -->
-				<div class="slider-item">
-					<img src="<?php bloginfo('template_url') ?>/images/banner.jpg" alt="banner" width="1920" height="702">
-				</div><!-- .slider-item -->
+				
+				<?php if( have_rows('slider') ): ?>
+					<?php $counter = 1;?>
+					<?php while( have_rows('slider') ): the_row(); ?>
+						<?php $slider_image = get_sub_field('homepage_slider_image'); ?>
+            <div class="slider-item class_<?php echo $counter;?> <?php the_sub_field('homepage_slider_align_content'); ?>" style="background:url(<?php echo $slider_image['url']; ?>) no-repeat;">
+        			<div class="slide-inner-wrap">
+	        			<?php if(get_sub_field('homepage_slider_h2')) { ?>
+									<h2><?php the_sub_field('homepage_slider_h2'); ?></h2>
+								<?php } ?>
+								<?php if(get_sub_field('homepage_slider_h1')) { ?>
+									<h1><?php the_sub_field('homepage_slider_h1'); ?></h1>
+								<?php } ?>
+								<?php if(get_sub_field('homepage_slider_button_text')) { ?>
+									<a class="button-green" href="<?php the_sub_field('homepage_slider_button_link'); ?>"><?php the_sub_field('homepage_slider_button_text'); ?></a>
+								<?php } ?>
+							</div><!-- .slide-inner-wrap -->
+						</div><!-- .slider-item -->
+						<?php $counter++;?>  
+					<?php endwhile; ?>
+				<?php endif; ?>	
+				
+				
 			</div><!-- .slider-wrap -->
 		<?php	} elseif ( is_page_template( 'page_templates/template-page-aboutus.php' )  ) { ?>
 			<img src="<?php bloginfo('template_url') ?>/images/placeholder-1920x590.png" alt="placeholder-1920x590" width="1920" height="590">
 			
 		<?php	} elseif ( is_page_template( 'page_templates/template-page-what-is-amicen.php'  ) || is_page_template( 'page_templates/template-page-how-it-works.php' )|| is_page_template( 'page_templates/template-page-how-to-take.php' )) { ?>
 		<div class="bg-wrap" style="background: url(<?php bloginfo('template_url') ?>/images/about-us-inner-banner.jpg)">
-			<div class="inner-banner-wrap" >
-				<div class="left">
-					<img src="<?php bloginfo('template_url') ?>/images/amicen-product.png" alt="amicen-product" width="308" height="375">
+			<div class="inner-banner-wrap">
+				<div class="left wow fadeInLeft">
+					<?php $banner_image = get_field('banner_image'); ?>
+					<img src="<?php echo $banner_image['url']; ?>" alt="amicen-product" width="308" height="375">
 				</div><!-- left -->
-				<div class="right">
-					<h1>Looking for a NATURAL, DRUG-FREE approach to support focus, attention and learning?</h1>
-					<h2>COGNITIVE ENHANCING NUTRIENT</h2>
-					<a class="button-green" href="#">Try Amicen Today</a>
+				<div class="right wow fadeIn">
+					<h1><?php the_field('banner_h1'); ?></h1>
+					<h2><?php the_field('banner_h2'); ?></h2>
+					<?php if(get_sub_field('banner_button_link')) { ?>
+						<a class="button-green smooth-scroll" href="<?php the_field('banner_button_link'); ?>"><?php the_field('banner_button_text'); ?></a>
+					<?php } else { ?>
+						<a class="button-green smooth-scroll" href="#featured-product"><?php the_field('banner_button_text'); ?></a>
+					<?php } ?>
+					
 				</div><!-- right -->
 			</div><!-- inner-banner-wrap -->
 		</div>
 		<?php } else { ?>
-			<img src="<?php bloginfo('template_url') ?>/images/placeholder-1920x590.png" alt="placeholder-1920x590" width="1920" height="590">
+			<?php $hero_banner_image = get_field('hero_banner_image'); ?>
+			<?php if(get_field('hero_banner_image')) { ?>
+				<img src="<?php echo $hero_banner_image['url'] ?>" alt="<?php echo $hero_banner_image['url'] ?>" width="1920" height="590">
+			<?php } ?>
 		<?php } ?>
 		
 		
