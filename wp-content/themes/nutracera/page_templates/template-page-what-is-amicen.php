@@ -19,7 +19,7 @@ get_header(); ?>
 					<div class="copy">
 						<?php the_field('block_two_textarea'); ?>
 					</div><!-- .copy -->
-					<a href="#up-next" class="button-green"><?php the_field('block_two_button_text'); ?></a>
+					<a href="#featured-product-wrap" class="button-green smooth-scroll"><?php the_field('block_two_button_text'); ?></a>
 				</div><!-- right -->
 				<div class="image-wrap wow fadeInUp">
 					<img src="<?php bloginfo('template_url') ?>/images/kids-group-image.jpg" alt="kids-group-image" width="619" height="412" />

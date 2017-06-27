@@ -79,10 +79,10 @@ jQuery(document).ready(function($) {
   //contact-us-overlay
   $('.contact-us-overlay-toggle').on('click', function() {
 	  $('.overlay-wrap.contact-us').addClass('active');
-	  $('.close-button').show();
+	  $(this).find('.close-button.contact-us').show();
 	  return false;
   });
-  $('.close-button').on('click', function() {
+  $('.close-button.contact-us').on('click', function() {
 	  $('.overlay-wrap.contact-us').removeClass('active');
 	  $(this).hide();
 	  return false;

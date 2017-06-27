@@ -54,14 +54,29 @@ ul.menu > li{display:inline-block;font-size:21px;font-size: 1.09375vw;margin-rig
 ul.menu li.menu-item-has-children{margin-right:91px}
 ul.menu li.menu-item-has-children a{display:block}
 ul.menu li.menu-item-has-children > a::after{background:url(images/arrow-nav.jpg) no-repeat;content:" ";display:block;width:18px;height:9px;position:absolute;right:-25px;top:8px}
-.sub-menu{overflow:hidden;height:0;width:0;background:rgba(255,255,255,.6);position: relative;
-    z-index: 100000;
+.sub-menu {
+	overflow: hidden;
+	height: 0;
+	width: 0;
+	background: rgba(255,255,255,.6);
+	position: relative;
+	z-index: 100000;
+	margin-top: -3px;
 }
-}
+
 .sub-menu li {
 	margin: 20px 0;
 }
-ul.menu.desktop li:hover > .sub-menu{height:auto;width:200px;position:absolute;top:25px;display:block}
+ul.menu.desktop li:hover > .sub-menu {
+	height: auto;
+	width: 200px;
+	position: absolute;
+	top: 25px;
+	display: block;
+	padding: 20px 30px;
+	background: #efefef;
+}
+.sub-menu li {margin-bottom: 10px}
 .search-box{margin-right:48px}
 /* .searchform {padding-bottom: 15px;} */
 .searchform #s {
@@ -105,8 +120,8 @@ ul.menu.desktop li:hover > .sub-menu{height:auto;width:200px;position:absolute;t
 	transition: all 1.3s ease 0s;
 	transition-delay: .3s;
 }
-.button-green{background:#5e913f;background:-moz-linear-gradient(left,#5e913f 0%,#6dad29 100%);background:-webkit-linear-gradient(left,#5e913f 0%,#6dad29 100%);background:linear-gradient(to right,#5e913f 0%,#6dad29 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5e913f',endColorstr='#6dad29',GradientType=1);color:#fff;font-weight:bold;font-family:"ff-tisa-sans-web-pro",sans-serif;font-size: 22px;font-size: 1.1458333333333335vw;padding:19px 37px;display:inline-block;font-size: 1.1458333333333335vw;}
-
+.button-green{transition: all 0.3s ease 0s;background:#5e913f;background:-moz-linear-gradient(left,#5e913f 0%,#6dad29 100%);background:-webkit-linear-gradient(left,#5e913f 0%,#6dad29 100%);background:linear-gradient(to right,#5e913f 0%,#6dad29 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5e913f',endColorstr='#6dad29',GradientType=1);color:#fff;font-weight:bold;font-family:"ff-tisa-sans-web-pro",sans-serif;font-size: 22px;font-size: 1.1458333333333335vw;padding:19px 37px;display:inline-block;font-size: 1.1458333333333335vw;}
+.button-green:hover {box-shadow: 0px 0px 3px #000;transition: all 0.3s ease 0s;}
 .button-blue{background:#00617b;color:#fff;font-weight:bold;font-family:"ff-tisa-sans-web-pro",sans-serif;font-size: 22px;font-size: 1.1458333333333335vw;padding:19px 37px;display:inline-block}
 
 .slick-dots{position:absolute;bottom:50px;width:100%;text-align:center;margin:0;padding:0}
@@ -380,14 +395,14 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 .step-logo{text-align:center}
 .copy-wrap > img{margin-bottom:45px;margin-left:-21%}
 .step-one .copy-wrap{margin-top:-100px}
-.step-one .copy-wrap h3{color:#02617b;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;text-align:left;margin-bottom:29px;text-align:center;display:inline-block}
+.step-one .copy-wrap h3{color:#02617b;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;font-size:2.916666666666667vw;text-align:left;margin-bottom:29px;text-align:center;display:inline-block}
 .step-one .copy-wrap p{font-size:26px;font-size:1.3541666666667vw;font-family:"vag-rundschrift-d",sans-serif;color:#1f1f1f;text-align:left;font-weight:100}
 .step-one .copy-wrap p span{color:#5e913f;font-weight:bold;text-transform:uppercase}
-.step-one .copy-wrap h3{color:#02617b;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;text-align:left;margin-bottom:29px;text-align:center;display:inline-block;margin-left:-85px}
+.step-one .copy-wrap h3{color:#02617b;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;font-size:2.916666666666667vw;text-align:left;margin-bottom:29px;text-align:center;display:inline-block;margin-left:-85px}
 .step-one .copy-wrap .step-icon{margin-bottom:-5px;margin-right: 15px;}
 .step-two .copy-wrap .step-icon{margin-bottom:-5px}
 .step-one .copy-wrap .step-logo{margin-left:70px}
-.step-two .copy-wrap h3{color:#fff;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;text-align:left;margin-bottom:29px;text-align:center;display:inline-block;margin-left:-76px}
+.step-two .copy-wrap h3{color:#fff;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;font-size:2.916666666666667vw;text-align:left;margin-bottom:29px;text-align:center;display:inline-block;margin-left:-76px}
 .step-icon{margin-right:25px}
 .step-two .right{display:flex;width:685px;margin-left:auto}
 .step-twp .copy-wrap{text-align:center;margin-top:-100px;max-width:555px}
@@ -396,7 +411,7 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 .step-three .inner-wrap{max-width:1520px}
 .step-three .left{display:flex;width:685px}
 .step-three .copy-wrap{padding-top:35px}
-.step-three .copy-wrap h3{color:#02617b;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;text-align:left;margin-bottom:29px;margin-left:-76px;display:inline-block}
+.step-three .copy-wrap h3{color:#02617b;letter-spacing:.025em;font-family:ingra,sans-serif;font-size:56px;font-size:2.916666666666667vw;text-align:left;margin-bottom:29px;margin-left:-76px;display:inline-block}
 .step-three .step-icon img{margin-right:25px;margin-top:160px}
 .step-three .right{margin-left:auto;margin-bottom:120px}
 .step-three .copy-wrap p{font-size:26px;font-size:1.3541666666667vw;font-family:"vag-rundschrift-d",sans-serif;color:#1f1f1f;text-align:left;font-weight:100}
@@ -410,12 +425,12 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 .step-four .middle{margin:0 115px}
 .step-four .copy-wrap p{font-size:26px;font-size:1.3541666666667vw;font-family:"vag-rundschrift-d",sans-serif;color:#fff;text-align:left;font-weight:100}
 .how-it-works-wrap .inner-wrap{display:flex;justify-content:left;max-width:1515px}
-.how-to-take-wrap{background:#eeecec}
+.how-to-take-wrap {background: #eeecec;padding: 0 20px;}
 .how-to-take-wrap .inner-wrap{max-width:1600px;display:flex;padding-bottom:180px;}
 .how-to-take-wrap .copy-wrap{max-width:793px;text-align:left;padding-right:110px;font-family:"ff-tisa-sans-web-pro",sans-serif}
 .how-to-take-wrap .copy-wrap h3{font-size:54px;font-size:2.8125vw;color:#02617b;position:relative;text-align:left;text-transform:uppercase}
 .how-to-take-wrap .copy-wrap h3::after{content:" ";background:#5f933e;width:106px;height:6px;display:block;margin-top:10px;left:0;margin-left:-32px;margin-bottom:54px}
-.how-to-take-wrap .copy-wrap h4{font-size:21px;font-size:1.09375vw;font-size:1.09375vw;font-weight:bold;margin-bottom:26px}
+.how-to-take-wrap .copy-wrap h4{font-size:21px;font-size:1.09375vw;font-weight:bold;margin-bottom:26px}
 .how-to-take-wrap p{font-size:22px;font-size:1.1458333333333vw;font-family:"vag-rundschrift-d",sans-serif;font-weight:100;letter-spacing:.03em;margin-bottom:40px;line-height:122.72%}
 .how-to-take-wrap .image-wrap img{box-shadow:18px 18px 0 0 #02617b,18px 18px 0 4px #02617b}
 .blog-feed-wrap{background:#f6f6f6;padding-top:160px}
@@ -530,7 +545,7 @@ body.woocommerce-page .widget-area {display: none;}
 	z-index: 100000;
 	height: 0px;
 	overflow: hidden;
-	transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;	
 }
 .overlay-wrap.active {height: 100vh;transition: all 0.3s ease 0s;}
 .overlay-inner-wrap {
@@ -685,9 +700,13 @@ form.cart button{padding:14px}
 .step-four .middle img{width:100%;height:auto}
 .step-four .copy-wrap h3{margin-bottom:25px}
 .step-four .copy-wrap h3 .step-icon{margin-bottom:-10px}
+.how-to-take-wrap .inner-wrap {max-width: 1000px}
+/* .how-to-take-wrap .image-wrap {width: 60%} */
+.how-to-take-wrap .image-wrap img {width: 100%;height: auto}
 
 }/* 1440 */
 @media screen and (max-width: 1366px) {
+		p{font-size: 18px;}
 	.searchform #s{border-top:none;border-right:none;border-bottom:2px solid #02617b;border-left:none;transition:all .3s ease 0;width:100px;height:30px;font-size:19px;font-style:italic}
 	.intro p {font-size: 18px}
 	.aboutus-wrap h3 {font-size:40px;}
@@ -728,10 +747,27 @@ form.cart button{padding:14px}
 	form.cart button {font-size: 16px}
 	.view-cart-header {font-size: 12px}
 	.quantity input {font-size: 16px}
-	
-	
-	
+	.how-it-works-wrap .step-one .left {padding-right: 50px}
+	.breadcrumb-wrap {padding: 40px}
+	.breadcrumb-wrap li {width: 300px}
+	.how-it-works-wrap .step-one .right {width: 362px;}
+	.how-it-works-wrap .inner-wrap {max-width: 960px}
+	.how-it-works-wrap .inner-wrap {max-width: 760px;}
+	.section .copy-wrap p {font-size: 16px;}
+	.section.step-two {padding-top: 80px;}
+	.how-to-take-wrap .copy-wrap p {font-size: 16px}
+	.woocommerce-page h1 {font-size: 35px}
+	.general-container {padding: 80px 20px 50px;}
+	.general-container .inner-wrap {max-width: 1040px;padding-bottom: 100px}
+	.general-container .type-post {padding-right: 40px;}
+	.widget-area {
+	min-width: 280px;
+}
+#nav-below > div a {font-size: 16px;}
+.blog-feed .left .post:first-child p, .blog-feed .left .post:nth-child(2) p, .blog-feed .left .post:nth-child(3) p, .blog-feed .right .post:first-child p, .blog-feed .right .post:last-child p {font-size: 16px}
 }/* 1355px */
+
+
 @media screen and (max-width: 1220px) {
 	ul.menu > li{font-size:16px;margin-right:30px}
 	ul.menu li.menu-item-has-children{margin-right:55px}
@@ -741,12 +777,14 @@ form.cart button{padding:14px}
 	.our-beliefs p {font-size: 16px}
 	.breadcrumb-wrap li {width: 200px}
 	.about-amicen .inner-wrap .left p {font-size: 18px}
-	.featured-product-module .left {
-	max-width: 345px;
-}
+	.featured-product-module .left {max-width: 345px;}
+	.question-footer h4 {font-size: 18px}
+	.widget-title {font-size: 20px;padding: 20px}
+	.entry-meta {font-size: 16px}
+	.question-footer a {font-size: 16px}
 	
 }
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1024px) {
 	.cart-wrap{padding:15px}
 	.menu-main-navigation-container{display:none}
 	.mobile-menu-toggle-wrap{display:block!important;margin-right:10px}
@@ -768,7 +806,7 @@ form.cart button{padding:14px}
 	ul#menu-main-navigation{margin:0;padding:0}
 	.overlay-wrap.contact-us.active{z-index:300000000000}
 	.welcome-wrap p{font-size:18px}
-	.view-cart-header,.woocommerce-Price-amount amount{font-size:13px}
+	.view-cart-header,.woocommerce-Price-amount amount{font-size:12px}
 	.kids-wrap h3::after{margin-bottom:31px}
 	.kids-wrap p{font-size:18px}
 	.border-only{font-size:13px}
@@ -776,8 +814,8 @@ form.cart button{padding:14px}
 	.product-content{font-size:16px}
 	.button-product{font-size:16px}
 	.blog-feed{display:flex;flex-direction:column}
-	.blog-feed .left{width:100%;margin-bottom:20px}
-	.blog-feed .right{width:100%}
+	.blog-feed .left{width:100%;margin-bottom:20px;padding: 0;}
+	.blog-feed .right{width:100%;padding: 0}
 	.blog-feed .left .post p,.blog-feed .right .post p{margin-bottom:0;font-size:18px!important}
 	.blog-feed .left .post h3,.blog-feed .right .post h3{font-size:23px!important}
 	.blog-feed .left .post:first-child{display:flex;margin-bottom:20px}
@@ -817,6 +855,10 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 .image-box {max-width: 200px}
 .product-info {padding-right: 20px}
 .button-blue {font-size: 16px}
+.how-it-works-wrap .section {padding: 125px 100px}
+.section .copy-wrap h3{font-size: 30px}
+.woocommerce-page input:not(.button) {font-size: 16px}
+.selection > span {font-size:16px}
 
 } /* end 1120px */
 
@@ -875,16 +917,30 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 	.our-beliefs {margin-bottom: 50px}
 	.footer-wrap .inner-wrap {justify-content: center;}
 	.our-beliefs .left {float: none;width: 100%;margin-bottom: 20px;}
-	.breadcrumb-wrap li {
-	width: 130px;
-}
-.featured-product-module .left {
-	max-width: 210px;
-	display: flex;justify-content: center;align-items: center;background-size: cover !important;
-}
-form.cart button {font-size: 14px}
+	.breadcrumb-wrap li {width: 130px;}
+	.featured-product-module .left {max-width: 210px;display: flex;justify-content: center;align-items: center;background-size: cover !important;}
+	form.cart button {font-size: 14px}
 	.about-amicen h3 {font-size: 25px}
-/* 	.overlay-inner-wrap {transform: scale(.8)} */
+	.quantity input {  -webkit-appearance: none;height: 51px;border-radius: initial; border: 1px solid #888;}
+  .how-it-works-wrap .inner-wrap {flex-direction: column;}
+  .how-it-works-wrap .step-one .left {width: 100%;padding: 0}
+  .how-it-works-wrap .step-one .right {width: 70%;margin: 0 auto;}
+  .how-it-works-wrap .section {padding:60px 20px}
+  .section.step-two .inner-wrap{flex-direction: column-reverse}
+  .section.step-two .inner-wrap .right,.section.step-three .inner-wrap .left {width: 100%;padding: 0;}
+  .section.step-two .inner-wrap .left,.section.step-three .inner-wrap .right {width: 80%;margin: 0 auto;padding: 0;}
+  .section .copy-wrap h3 {font-size: 30px;width: 100%;	text-align: center;	margin: 0 0 10px;}
+  .section .copy-wrap {margin-bottom: 20px}
+  .section .copy-wrap h3 img{display: block;margin: 0 auto}
+  .step-one .copy-wrap h3 .step-icon,.step-two .copy-wrap h3 .step-icon,.step-three .copy-wrap h3 .step-icon, .step-four .copy-wrap h3 .step-icon {margin: 0 auto 10px}
+  .step-four .middle {margin:40px 115px;max-width: 200px;}
+  .step-logo {text-align: center;margin: 0 0 20px}
+  .step-one .copy-wrap .step-logo {margin-left: 0}
+	.how-to-take-wrap .copy-wrap {padding-right: 20px}
+	.alignleft.size-medium.wp-image-78 {width: 53%;height: auto}
+	.general-container .inner-wrap {flex-direction: column}
+	.entry-content {margin-bottom: 100px}
+	.single-post h1 {font-size: 30px}
 } /* end 850px */
 
 @media screen and (max-width: 600px) {
@@ -924,26 +980,55 @@ form.cart button {font-size: 14px}
 	.featured-product-module h3 {font-size: 30px}
 	.featured-product-wrap .woocommerce-Price-amount, .featured-product-module .woocommerce-Price-amount {margin-bottom: 20px}
 	.product-info {width: 100%}
-	.featured-product-module .left {width: 100%; background-size: cover; margin: 0 auto 50px;}
+	.featured-product-module .left {max-width: 100%; background-size: cover; margin: 0 auto 50px;}
 	.copyright .inner-wrap {flex-direction: column;text-align: center;}
 	.footer-wrap .inner-wrap {justify-content: center;max-width: 392px;}
 	.col.title {width: auto;}
 	.about-amicen .inner-wrap .right {max-width: 100%;}
 	.about-amicen .right .copy::before {width: 100%;}
 	.about-amicen .inner-wrap .right {max-width: 100%;padding: 0 40px 40px;}
-	.about-amicen .right .copy p {font-size: 20px}
+	.about-amicen .right .copy p {font-size: 19px;padding: 0}
 	.search-box {display: none;}
 	.main-header {flex-wrap: wrap}
 	.logo {width: 50%;margin: 0;padding: 10px}
 	.main-nav-wrap {width: 50%}
-	.cart-wrap {width: 100%;height: 0;overflow: hidden;position: fixed;top:145px;}
-	 body.woocommerce-items-in-cart .cart-wrap {}
+	.cart-wrap {width: 100%;height: 0;overflow: hidden;position:  absolute;top:122px;flex-direction: row}
+	.main-header.stuck .cart-wrap {top:75px}
+	body.woocommerce-items-in-cart .cart-wrap {height: auto}
+	body.woocommerce-items-in-cart .top-header-wrap {padding-bottom:57px}
+	.cart-items {border: none;margin: 0 10px 0 0 ;padding: 0}
+	.view-cart-header {margin: 0;padding: 0;}
+	.about-amicen .right > img {width: 100%;height: auto}
+	.about-amicen .inner-wrap .left {height: auto;}
+	.about-amicen .inner-wrap .image-wrap {margin-bottom: 20px;height: auto}
+	.breadcrumb-wrap {display: none;}
+	.up-next .left {width: 100%}
+	.up-next .right {padding: 0}
+	.disclaimer {width: 100%}
+	.product-info {padding: 0}
+	form.cart button {width: 100%}
+	body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size: 19px;line-height: 28px;}
+	.inner-banner-wrap h2 {font-size: 15px;	line-height: 22px;}
+	.button-product {max-width: 100%}
+	.inner-banner-wrap h1 {font-size: 19px}
+	.how-it-works-wrap .inner-wrap {flex-direction: column}
+	.how-to-take-wrap .inner-wrap {flex-direction: column;}
+	.how-to-take-wrap .copy-wrap {padding: 0 0 50px}
+	.how-to-take-wrap .image-wrap {width: 80%;margin: 0 auto}
 } /* end 600px */
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 414px) {
 	.footer-wrap .inner-wrap  {justify-content: center}
-.footer-wrap .inner-wrap .col {width: 100% !important;text-align: center}
-.footer-wrap .inner-wrap .col:nth-child(odd) {width:30%;text-align: center}
+	.footer-wrap .inner-wrap .col {width: 100% !important;text-align: center}
+	.footer-wrap .inner-wrap .col:nth-child(odd) {width:30%;text-align: center}
+	.about-amicen .inner-wrap .left {padding: 20px}
+	.quantity input {
+       -webkit-appearance: none;
+       height: 51px;
+       border-radius: initial;
+       border: 1px solid #888;
+       margin-top: 2px;
+   }
 } /* end 350px */
 
 
