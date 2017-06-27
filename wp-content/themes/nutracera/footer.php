@@ -26,16 +26,20 @@
 		<div class="col">
 			<?php wp_nav_menu( array('menu' => 'Footer Nav Right') ); ?>
 		</div><!-- col -->
-		<div class="col mobile-fullwidth" style="display: none;">
+		<div class="col mobile-fullwidth" >
 			<strong>JOIN OUR EMAIL LIST</strong>
 			<?php echo do_shortcode('[gravityform id="2" title="false" description="false" ajax="true"]'); ?>
 		</div><!-- col -->
-		<div class="col mobile-fullwidth" style="display: none;">
-			<strong>FOLLOW US</strong>
-			<a href="" target="_blank">Facebook</a>
-			<a href="" target="_blank">Twitter</a>
-			<a href="" target="_blank">Instagram</a>
+		<div class="col title social-links mobile-fullwidth">
+			<strong>FOLLOW US</strong>	
+			<div>	
+			<a href="" target="_blank"><img src="<?php bloginfo('template_url') ?>/images/icon-g-plus.png" alt="Google Plus" width="37" height="24" /></a>
+			<a href="" target="_blank"><img src="<?php bloginfo('template_url') ?>/images/icon-facebook.png" alt="Twitter" width="12" height="25" /></a>
+			<a href="" target="_blank"><img src="<?php bloginfo('template_url') ?>/images/icon-linkedin.png" alt="linkedin" width="26" height="25" /></a>	
+			<a href="" target="_blank"><img src="<?php bloginfo('template_url') ?>/images/icon-instagram.png" alt="instagram" width="26" height="25" /></a>	
+			</div>
 		</div><!-- col -->
+
 
 		
 	</div><!-- inner-wrap -->

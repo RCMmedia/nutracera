@@ -50,7 +50,22 @@ p {  /* 16px */ line-height: 1.3; /* 18px */ margin: 0 0 1.1250em 0;color: #3030
 .logo img{display:block}
 .main-nav-wrap{display:flex;align-items:center;width:76%;flex-direction:row;justify-content:flex-end;font-family:"ff-tisa-sans-web-pro",sans-serif;margin-top:10px}
 #menu-main-navigation{display:flex}
-ul.menu > li{display:inline-block;font-size:21px;font-size: 1.09375vw;margin-right:66px;font-weight:600;position:relative}
+ul.menu > li{display:inline-block;font-size:21px;font-size: 1.09375vw;margin-right:66px;font-weight:600;position:relative;transition: all 0.3s ease 0s;}
+ul.menu > li:before {opacity: 0;content:"";width:0;height: 0;transition: all 0.3s ease 0s;position: absolute;left: -100%;top: -10px;}
+
+ul.menu > li:hover::before {
+	display: block;
+	content: "";
+	background: #02617b;
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	top: -10px;
+	opacity: 1;
+	transition: opacity 1.3s ease 0s;
+	left: 0;
+}
+
 ul.menu li.menu-item-has-children{margin-right:91px}
 ul.menu li.menu-item-has-children a{display:block}
 ul.menu li.menu-item-has-children > a::after{background:url(images/arrow-nav.jpg) no-repeat;content:" ";display:block;width:18px;height:9px;position:absolute;right:-25px;top:8px}
@@ -61,20 +76,26 @@ ul.menu li.menu-item-has-children > a::after{background:url(images/arrow-nav.jpg
 	background: rgba(255,255,255,.6);
 	position: relative;
 	z-index: 100000;
-	margin-top: -3px;
+	margin-top: -1px;
+	opacity: 0;
+	box-shadow: 0px 8px 8px -6px rgba(0,0,0,.4);
+	transition: opacity 0.3s ease 0s;
 }
 
 .sub-menu li {
 	margin: 20px 0;
 }
+.sub-menu li:first-child {margin-top: 0}
 ul.menu.desktop li:hover > .sub-menu {
+	opacity: 1;
 	height: auto;
 	width: 200px;
 	position: absolute;
-	top: 25px;
+	top: 21px;
 	display: block;
 	padding: 20px 30px;
 	background: #efefef;
+	transition: opacity 0.3s ease 0s;
 }
 .sub-menu li {margin-bottom: 10px}
 .search-box{margin-right:48px}
@@ -613,9 +634,7 @@ body.woocommerce-page .widget-area {display: none;}
 #gform_2 input {width: 100%}
 #gform_confirmation_wrapper_2 {max-width: 300px;margin: 20px 0;font-weight: bold;line-height: 1.3}
 .main-nav-wrap .close-button {z-index: 1000000000000;position: absolute;top:30px;right: 30px}
-
-
-
+.social-links a {color: #fff;display: inline-block;margin-right: 15px;margin-top: 15px}
 
 /* MEDIA QUEIRES */
 
@@ -765,6 +784,8 @@ form.cart button{padding:14px}
 }
 #nav-below > div a {font-size: 16px;}
 .blog-feed .left .post:first-child p, .blog-feed .left .post:nth-child(2) p, .blog-feed .left .post:nth-child(3) p, .blog-feed .right .post:first-child p, .blog-feed .right .post:last-child p {font-size: 16px}
+.featured-product-wrap h3, .blog-feed-wrap h3.section-title {font-size: 40px;}
+.featured-product-module h3 {font-size: 40px}
 }/* 1355px */
 
 
@@ -783,8 +804,7 @@ form.cart button{padding:14px}
 	.entry-meta {font-size: 16px}
 	.question-footer a {font-size: 16px}
 	
-}
-@media screen and (max-width: 1024px) {
+
 	.cart-wrap{padding:15px}
 	.menu-main-navigation-container{display:none}
 	.mobile-menu-toggle-wrap{display:block!important;margin-right:10px}
@@ -801,7 +821,16 @@ form.cart button{padding:14px}
 	ul.menu li.menu-item-has-children > a::after{background:transparent}
 	ul.menu li.menu-item-has-children{width:168px}
 	ul.menu li.menu-item-has-children:after{background:url(images/arrow-nav.jpg) no-repeat;content:" ";display:block;width:18px;height:9px;position:absolute;right:-25px;top:8px}
-	.menu-main-navigation-container.mobile .sub-menu{margin:0 0 0 20px;padding:0;list-style:none;display:none;height:auto;width:auto}
+.menu-main-navigation-container.mobile .sub-menu {
+	margin: 0 0 0 20px;
+	padding: 0;
+	list-style: none;
+	display: none;
+	height: auto;
+	width: auto;
+	opacity: 1;
+	box-shadow: none;
+}
 	.menu-main-navigation-container.mobile .sub-menu li a{font-size:20px;margin:20px 0}
 	ul#menu-main-navigation{margin:0;padding:0}
 	.overlay-wrap.contact-us.active{z-index:300000000000}
@@ -859,6 +888,7 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 .section .copy-wrap h3{font-size: 30px}
 .woocommerce-page input:not(.button) {font-size: 16px}
 .selection > span {font-size:16px}
+.kids-wrap .left > span {display: block;margin: 0 auto}
 
 } /* end 1120px */
 
@@ -875,7 +905,7 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 	.welcome-wrap p{max-width:100%}
 	.kids-wrap {padding: 60px }
 	.kids-wrap .flex-wrap{flex-direction:column}
-	.kids-wrap .left{width:100%;margin-bottom:70px;}
+	.kids-wrap .left {width: 100%;margin-bottom: 70px;display: flex;flex-direction: column;}
 	.kids-wrap .right{width:100%;padding:0;text-align: center;margin-bottom:60px;}
 	.kids-wrap .right img {max-width: 400px;margin: 0 auto;}
 	.kids-wrap h3{font-size:30px}
@@ -992,9 +1022,11 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 	.main-header {flex-wrap: wrap}
 	.logo {width: 50%;margin: 0;padding: 10px}
 	.main-nav-wrap {width: 50%}
-	.cart-wrap {width: 100%;height: 0;overflow: hidden;position:  absolute;top:122px;flex-direction: row}
+	
+	.cart-wrap {width: 100%;height: 0;overflow: hidden;position:  absolute;top:122px;flex-direction: row;z-index: 1000000000;padding: 0;}
+	body.admin-bar .cart-wrap {top:180px}
 	.main-header.stuck .cart-wrap {top:75px}
-	body.woocommerce-items-in-cart .cart-wrap {height: auto}
+	body.woocommerce-items-in-cart .cart-wrap {height: auto;padding: 15px}
 	body.woocommerce-items-in-cart .top-header-wrap {padding-bottom:57px}
 	.cart-items {border: none;margin: 0 10px 0 0 ;padding: 0}
 	.view-cart-header {margin: 0;padding: 0;}
@@ -1015,6 +1047,13 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
 	.how-to-take-wrap .inner-wrap {flex-direction: column;}
 	.how-to-take-wrap .copy-wrap {padding: 0 0 50px}
 	.how-to-take-wrap .image-wrap {width: 80%;margin: 0 auto}
+	.section .copy-wrap {text-align: center;}
+	.blog-feed .left {display: none;}
+	.col.mobile-fullwidth strong {text-align: center;display: block;margin-top: 50px}
+	.col.mobile-fullwidth {width: 100% !important}
+	.col.mobile-fullwidth div {text-align: center}
+	.testi-quote-left, .testi-quote-right {display: none;}
+	.featured-product-wrap .bg-title {font-size:26px;}
 } /* end 600px */
 
 @media screen and (max-width: 414px) {
@@ -1029,6 +1068,7 @@ body.page-template-template-page-what-is-amicen .inner-banner-wrap h1 {font-size
        border: 1px solid #888;
        margin-top: 2px;
    }
+   .blog-feed-wrap, .kids-wrap, .welcome-wrap, .featured-product-wrap {padding: 20px}
 } /* end 350px */
 
 

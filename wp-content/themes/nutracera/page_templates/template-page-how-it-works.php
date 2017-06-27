@@ -17,13 +17,12 @@ get_header(); ?>
 							<h3>
 								<div class="step-logo">
 									<?php $block_one_small_icon = get_field('block_one_small_icon'); ?>
-										<img src="<?php echo $block_one_small_icon['url'] ?>" alt="<?php echo $block_one_small_icon['alt'] ?>"  />
+									<img src="<?php echo $block_one_small_icon['url'] ?>" alt="<?php echo $block_one_small_icon['alt'] ?>"  />
 								</div>
 								<img class="step-icon" src="<?php bloginfo('template_url') ?>/images/step-1.png" alt="step-1" width="49" height="49" />
 								<?php the_field('block_one_title'); ?>
 							</h3>
-							<?php the_field('block_one_content'); ?>
-							
+							<?php the_field('block_one_content'); ?>					
 						</div><!-- copy-wrap -->
 					</div><!-- left -->
 					<div class="right wow fadeInRight">
@@ -40,9 +39,7 @@ get_header(); ?>
 							<img src="<?php echo $block_two_image['url'] ?>" alt="<?php echo $block_two_image['alt'] ?>" />
 						</div>
 						<div class="right wow fadeIn" data-wow-delay=".3s">
-								
 							<div class="copy-wrap">
-								
 								<h3>
 									<div class="step-logo">
 										<?php $block_two_small_icon = get_field('block_two_small_icon'); ?>

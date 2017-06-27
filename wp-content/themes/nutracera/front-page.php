@@ -26,8 +26,8 @@
 		<div class="left wow fadeInLeft">
 			<h3 class="section-title">NUTRACERA <span>K</span><span>i</span><span>d</span><span>s</span></h3>
 			<?php the_field('nutracera_kids_content'); ?>
-			<a class="button-green border-only" href="<?php bloginfo('url'); ?>/what-is-amicen/">Learn More<span> &#9654;</span></a> <span>OR</span>
-			<a class="button-green border-only smooth-scroll" href="#featured-product-wrap">Buy Now<span> &#9654;</span></a>
+			<a class="button-green border-only" href="<?php bloginfo('url'); ?>/what-is-amicen/">Learn More<span> &#9654;&#xFE0E;</span></a> <span>OR</span>
+			<a class="button-green border-only smooth-scroll" href="#featured-product-wrap">Buy Now<span> &#9654;&#xFE0E;</span></a>
 			
 		</div><!-- .left -->
 		<div class="right wow fadeInRight">
